@@ -213,8 +213,8 @@ nav {
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2.2rem, 10vw, 5rem);
+    margin-bottom: 1.5rem;
     background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -222,14 +222,15 @@ nav {
     opacity: 0;
     transform: translateY(30px);
     animation: revealUp 0.8s forwards 0.2s;
+    line-height: 1.1;
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 4vw, 1.25rem);
     color: var(--text-muted);
     max-width: 600px;
     margin-bottom: 2.5rem;
-    min-height: 3em; /* Avoid layout shift during typing */
+    min-height: 4em; /* Avoid layout shift during typing on mobile */
     position: relative;
     opacity: 0;
     transform: translateY(20px);
@@ -436,7 +437,55 @@ footer {
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
+    nav {
+        padding: 1.5rem 5%;
+    }
+
+    .logo span {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 0 8%;
+    }
+
     .cta-container {
         flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 1.2rem;
+    }
+
+    section {
+        padding: 80px 8%;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .loading-bar {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .typing-intro {
+        font-size: 0.8rem;
+        padding: 0 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        min-height: 6em;
     }
 }
